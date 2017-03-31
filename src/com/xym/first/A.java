@@ -1,6 +1,5 @@
 package com.xym.first;
 
-;
 
 /**
  * aaa
@@ -13,6 +12,7 @@ public class A {
 
     public static void main(String[] args) {
         System.out.print("~~~~~~~~~~~~~~~~~~~~~~~~~");
+        System.out.println("-----------xym-----------值=" + args[0] + "," + "当前类=A.main()");
     }
 
 }
