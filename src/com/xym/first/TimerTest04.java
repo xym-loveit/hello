@@ -16,7 +16,7 @@ public class TimerTest04 {
 
 	public TimerTest04() {
 		this.time = new Timer();
-		this.time.schedule(new TimeTest(), 1000, 2000);
+		this.time.scheduleAtFixedRate(new TimeTest(), 1000, 2000);
 	}
 
 	public static void main(String[] args) {
