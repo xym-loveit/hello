@@ -6,7 +6,6 @@ import java.util.TimerTask;
 
 /**
  *cs
- *xym_loveit@126.com
  *@author xym
  *@create 2017-04-24-17:26
  */

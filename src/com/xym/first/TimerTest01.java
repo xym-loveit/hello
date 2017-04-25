@@ -5,7 +5,6 @@ import java.util.TimerTask;
 
 /**
  *定时任务
- *xym_loveit@126.com
  *@author xym
  *@create 2017-04-24-17:10
  */

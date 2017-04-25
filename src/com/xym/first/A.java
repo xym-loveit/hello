@@ -3,7 +3,6 @@ package com.xym.first;
 
 /**
  * aaa
- * xym_loveit@126.com
  *
  * @author xym
  * @create 2017-03-31-15:06
