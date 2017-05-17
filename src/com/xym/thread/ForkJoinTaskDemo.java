@@ -15,9 +15,36 @@ import java.util.concurrent.RecursiveTask;
  */
 public class ForkJoinTaskDemo {
 	public static void main(String[] args) {
-		Integer count = new ForkJoinPool().invoke(new CountingTask(Paths.get("c:/")));
+		ForkJoinPool forkJoinPool = new ForkJoinPool();
+		Integer count = forkJoinPool.invoke(new CountingTask(Paths.get("e:/")));
 		System.out.println("D 盘下文件数量为： " + count);
+		showLog(forkJoinPool);
 		System.out.println("The Main Thread End!");
+	}
+
+	/**
+	 * fork/join 监控信息
+	 * @param forkJoinPool
+	 */
+	private static void showLog(ForkJoinPool forkJoinPool) {
+		System.out.println("***********************************************\n");
+		System.out.println("Fork/Join Pool: （并行级别）getParallelism=" + forkJoinPool.getParallelism());
+		System.out.println("Fork/Join Pool: （worker线程数量）getPoolSize=" + forkJoinPool.getPoolSize());
+		System.out.println("Fork/Join Pool: （当前执行任务的线程数量）getActiveThreadCount=" + forkJoinPool
+				.getActiveThreadCount());
+		System.out.println("Fork/Join Pool: （正在工作的线程）getRunningThreadCount=" + forkJoinPool
+				.getRunningThreadCount());
+
+		System.out.println("Fork/Join Pool: （提交给池但还未执行的任务数）getQueuedSubmissionCount=" + forkJoinPool
+				.getQueuedSubmissionCount());
+		System.out.println("Fork/Join Pool: （提交给池并开始执行的任务数）getQueuedTaskCount=" + forkJoinPool
+				.getQueuedTaskCount());
+
+		System.out.println("Fork/Join Pool:（池中是否还有排队的任务未执行） hasQueuedSubmissions=" + forkJoinPool
+				.hasQueuedSubmissions());
+		System.out.println(
+				"Fork/Join Pool: （fork/join池是否已经完成执行）isTerminated=" + forkJoinPool.isTerminated());
+		System.out.println("\n***********************************************");
 	}
 }
 
